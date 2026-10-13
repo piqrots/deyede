@@ -42,6 +42,14 @@ jobs:
         run: npm run build
         working-directory: frontend
 
+      - name: Create static entries for React routes
+        run: |
+          for route in katalog portofolio cara-pesan tentang kontak; do
+            mkdir -p "build/$route"
+            cp build/index.html "build/$route/index.html"
+          done
+        working-directory: frontend
+
       - name: Add SPA route fallback
         run: cp build/index.html build/404.html
         working-directory: frontend
