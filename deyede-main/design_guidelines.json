@@ -1,0 +1,120 @@
+{
+  "project_context": {
+    "name": "Deyede Custom Semarang",
+    "description": "High-end company profile and catalog for a convection/garment business in Semarang.",
+    "brand_tagline": "Drop Your Design",
+    "target_aesthetic": "Awwwards-level, strict monochrome art direction, high-fashion editorial, brutalist elegance.",
+    "theme": "Dark Mode Only (Black #000000 and White #FFFFFF)",
+    "language": "Bahasa Indonesia"
+  },
+  "colors": {
+    "primary": "#FFFFFF",
+    "background": "#000000",
+    "surface": "#0A0A0A",
+    "border": "rgba(255, 255, 255, 0.15)",
+    "text": {
+      "main": "#FFFFFF",
+      "muted": "rgba(255, 255, 255, 0.6)",
+      "inverted": "#000000"
+    },
+    "rules": [
+      "No generic gradients. Strictly high contrast.",
+      "Never use pure transparent backgrounds for headers/overlays; use backdrop-blur-xl with bg-black/80.",
+      "The aesthetic relies on negative space and stark contrasts."
+    ]
+  },
+  "typography": {
+    "fonts": {
+      "headings": "Playfair Display",
+      "body": "Manrope",
+      "accent_mono": "IBM Plex Mono"
+    },
+    "hierarchy": {
+      "h1": "text-5xl md:text-7xl lg:text-8xl font-serif tracking-tighter uppercase",
+      "h2": "text-4xl md:text-5xl font-serif tracking-tight",
+      "h3": "text-2xl font-sans font-light",
+      "body": "text-base font-sans text-white/80 leading-relaxed",
+      "labels": "text-xs font-mono uppercase tracking-[0.2em] text-white/60"
+    },
+    "rules": [
+      "Avoid Inter, Roboto, and Space Grotesk completely.",
+      "Use massive typography for hero elements but strictly control body text size.",
+      "Use IBM Plex Mono for technical details, step numbers (01, 02), and meta-information to give a 'tailored/measured' aesthetic."
+    ]
+  },
+  "brand_assets": {
+    "logo_url": "https://customer-assets-cm19k8pv.emergentagent.net/job_c27d21c5-4c2d-4415-8093-86e16dbe92a1/artifacts/da1d8a759880a12f_LOGO%20DEYEDE.webp",
+    "signature_background": "https://customer-assets-cm19k8pv.emergentagent.net/job_c27d21c5-4c2d-4415-8093-86e16dbe92a1/artifacts/5a8e415af7c8c22e_ciri%20khas%20latar%20belakang%20deyede.png"
+  },
+  "image_urls": {
+    "hero_abstract": "brand_assets.signature_background",
+    "apparel_tshirt": "https://images.unsplash.com/photo-1571455786673-9d9d6c194f90?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NDh8MHwxfHNlYXJjaHwxfHxibGFjayUyMHQtc2hpcnQlMjBmYXNoaW9uJTIwcGhvdG9ncmFwaHl8ZW58MHx8fHwxNzkxNjM1NjEyfDA&ixlib=rb-4.1.0&q=85",
+    "apparel_hoodie": "https://images.unsplash.com/photo-1615397587950-3cbb55f95b77?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHw0fHxtb25vY2hyb21lJTIwaG9vZGllJTIwYXBwYXJlbHxlbnwwfHx8fDE3OTE2MzU2MTJ8MA&ixlib=rb-4.1.0&q=85",
+    "apparel_jacket": "https://images.unsplash.com/photo-1771310961652-1af9711686ec?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHw0fHxkYXJrJTIwc3RyZWV0d2VhciUyMGphY2tldCUyMGZhc2hpb258ZW58MHx8fHwxNzkxNjM1NjEyfDA&ixlib=rb-4.1.0&q=85",
+    "apparel_totebag": "https://images.unsplash.com/photo-1572196284554-4e321b0e7e0b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzN8MHwxfHNlYXJjaHwyfHx0b3RlJTIwYmFnJTIwYmxhY2slMjB3aGl0ZSUyMHBob3RvZ3JhcGh5fGVufDB8fHx8MTc5MTYzNTYxMnww&ixlib=rb-4.1.0&q=85",
+    "rules": [
+      "Use CSS grayscale (grayscale(100%)) on images to strictly maintain the monochrome aesthetic. Remove grayscale on hover (hover:grayscale-0) for interactive elements."
+    ]
+  },
+  "layout_and_grids": {
+    "spacing": "Generous. Use p-8, p-12, p-24.",
+    "grid_strategy": "The Bento/Editorial mix. Sharp edges, 1px white/20 borders. No rounded corners (rounded-none).",
+    "hero_section": "Full screen (h-screen). Absolute positioning of the signature_background behind content with opacity-40 or mixed blend mode. Content centered or dramatically left-aligned.",
+    "navigation": "Sticky top, bg-black/80 with backdrop-blur-xl. Must contain Logo, Links (Beranda, Katalog, Cara Pesan, Tentang, Kontak)."
+  },
+  "motion_and_interactions": {
+    "libraries": ["framer-motion", "lucide-react", "react-fast-marquee"],
+    "hero_reveal": "Masked text reveal using framer-motion (y: 100% to 0, overflow hidden wrapper).",
+    "marquee": "Use react-fast-marquee for an 'Editorial Ribbon' separating sections (e.g., 'DEYEDE CUSTOM • PREMIUM CONVECTION • DROP YOUR DESIGN •').",
+    "hover_states": "Invert colors on hover for buttons (bg-white text-black -> bg-transparent text-white border-white). Image hover: slight scale (scale-105) with long duration (duration-700).",
+    "page_transitions": "Fade in/out between pages using framer-motion AnimatePresence."
+  },
+  "specific_pages_and_sections": {
+    "home_hero": {
+      "description": "Bold tagline 'DROP YOUR DESIGN'. Logo at top. Signature background pattern giving texture."
+    },
+    "catalog_section": {
+      "description": "Grid of products (Kaos, Hoodie, Kemeja, Jaket, dll). Use sharp-edged cards. Hovering over a card reveals the garment in subtle color, otherwise strict B&W."
+    },
+    "steps_section": {
+      "description": "4 Steps (Konsultasi, Desain, Produksi, Pengiriman). Use massive Mono font for numbers (01, 02...). Display in an asymmetrical grid.",
+      "data": [
+        {"step": "01", "title": "Konsultasi", "desc": "Diskusikan kebutuhan, bahan, dan timeline Anda."},
+        {"step": "02", "title": "Desain", "desc": "Drop your design! Tim kami akan melakukan review teknis."},
+        {"step": "03", "title": "Produksi", "desc": "Proses konveksi dengan quality control yang ketat."},
+        {"step": "04", "title": "Pengiriman", "desc": "Barang dikirim dengan aman ke lokasi Anda."}
+      ]
+    },
+    "benefits_section": {
+      "description": "Why Deyede? Focus on quality, speed, and precision (Jahitan Rapi, Bahan Premium, Tepat Waktu)."
+    },
+    "contact_section": {
+      "description": "Massive typography for 'LET'S TALK' or 'MULAI PROYEKMU'. A prominent, high-contrast 'Hubungi via WhatsApp' CTA button."
+    }
+  },
+  "accessibility": {
+    "contrast": "Strict adherence. White text on black background inherently passes APCA. Ensure muted text is at least text-white/60.",
+    "focus_states": "focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black",
+    "testing": "All interactive elements MUST include data-testid (e.g., data-testid='nav-link-katalog', data-testid='wa-cta-button')."
+  },
+  "instructions_to_main_agent": [
+    "Build a multi-page React application using react-router-dom.",
+    "Implement the specific fonts via Google Fonts (Playfair Display, Manrope, IBM Plex Mono) in index.html or global css.",
+    "Set the Tailwind config to use these fonts and strictly use the monochrome palette.",
+    "DO NOT use rounded corners; this design relies on sharp, brutalist, high-fashion edges (rounded-none).",
+    "Implement the background image (signature_background) as a fixed or absolute background with object-cover and opacity control.",
+    "Use standard HTML/Tailwind for structural creative layouts rather than rigid Shadcn wrappers where artistic overlap is needed.",
+    "Install and use `react-fast-marquee` for the text ribbon.",
+    "Ensure all copy is in Bahasa Indonesia as requested."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Do not converge toward generic 'AI slop' layouts. Make this feel like an Awwwards winner.",
+    "Create depth using z-index and typography scale, not drop shadows.",
+    "Add micro-interactions (framer-motion) to every clickable element.",
+    "Never center-align paragraphs; left-align text to maintain an editorial reading flow.",
+    "Do NOT use placeholder image URLs. Use the provided Unsplash URLs and brand assets.",
+    "Do NOT use emojis as icons. Use lucide-react.",
+    "Implement smooth scrolling (Lenis) if setting up the global layout.",
+    "Include data-testid on every interactive component for automated testing."
+  ]
+}
