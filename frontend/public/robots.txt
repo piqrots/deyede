@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://konveksimurah.store/sitemap.xml
