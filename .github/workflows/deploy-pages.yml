@@ -28,7 +28,11 @@ jobs:
           node-version: 20
 
       - name: Copy custom domain into build source
-        run: cp CNAME frontend/public/CNAME
+        run: |
+          mkdir -p frontend/public
+          cp index.html frontend/public/index.html
+          cp favicon.png favicon.svg frontend/public/
+          cp CNAME frontend/public/CNAME
 
       - name: Install dependencies
         run: npm install --no-audit --no-fund
