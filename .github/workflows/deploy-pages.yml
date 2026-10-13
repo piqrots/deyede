@@ -33,6 +33,7 @@ jobs:
           cp index.html frontend/public/index.html
           cp favicon.png favicon.svg frontend/public/
           cp CNAME frontend/public/CNAME
+          cp -R portofolio frontend/public/
 
       - name: Install dependencies
         run: npm install --no-audit --no-fund
