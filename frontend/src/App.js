@@ -21,6 +21,44 @@ function ScrollToTop() {
   return null;
 }
 
+function GoogleAnalytics() {
+  const { pathname, search } = useLocation();
+
+  useEffect(() => {
+    const measurementId = process.env.REACT_APP_GA_MEASUREMENT_ID;
+    if (!measurementId || !/^G-[A-Z0-9]+$/.test(measurementId)) return;
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag =
+      window.gtag ||
+      function () {
+        window.dataLayer.push(arguments);
+      };
+
+    if (!document.querySelector(`script[data-ga4="${measurementId}"]`)) {
+      const script = document.createElement("script");
+      script.async = true;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+      script.dataset.ga4 = measurementId;
+      document.head.appendChild(script);
+    }
+
+    if (window.ga4MeasurementId !== measurementId) {
+      window.gtag("js", new Date());
+      window.gtag("config", measurementId, { send_page_view: false });
+      window.ga4MeasurementId = measurementId;
+    }
+
+    window.gtag("event", "page_view", {
+      page_path: `${pathname}${search}`,
+      page_location: window.location.href,
+      page_title: document.title,
+    });
+  }, [pathname, search]);
+
+  return null;
+}
+
 function AnimatedRoutes() {
   const location = useLocation();
   return (
@@ -55,6 +93,7 @@ function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <GoogleAnalytics />
       <div className="bg-black text-white min-h-screen font-sans">
         <div aria-hidden="true" className="grain-overlay pointer-events-none fixed inset-0 z-[100]" />
         <Navbar />
