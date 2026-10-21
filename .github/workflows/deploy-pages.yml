@@ -58,6 +58,9 @@ jobs:
           done
         working-directory: frontend
 
+      - name: Add social preview metadata to promo pages
+        run: node frontend/scripts/add-promo-metadata.js
+
       - name: Add SPA route fallback
         run: cp build/index.html build/404.html
         working-directory: frontend

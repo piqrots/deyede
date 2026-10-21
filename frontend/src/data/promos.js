@@ -9,6 +9,7 @@ export const PROMO_OFFERS = [
       "Pesan jersey fun run custom di Semarang mulai Rp45.000. Sesuaikan desain, warna, ukuran, dan jumlah untuk kebutuhan event lari. Tanyakan promo diskon via WhatsApp.",
     price: "Mulai Rp45.000 / pcs",
     thumbnail: IMAGES.promoJerseyThumbnail,
+    shareImage: "https://konveksimurah.store/tubnailjersey.jpeg",
     summary:
       "Jersey custom untuk peserta, panitia, dan komunitas lari. Diskon tersedia sesuai jumlah pesanan dan periode promo.",
     intro:
@@ -58,6 +59,7 @@ export const PROMO_OFFERS = [
       "Baju organisasi custom di Semarang mulai Rp100.000. Pilih model, bahan, warna, logo, dan ukuran tim. Tanyakan diskon serta bonus gratis lanyard ID card anggota.",
     price: "Mulai Rp100.000 / pcs",
     thumbnail: IMAGES.promoOrganizationFront,
+    shareImage: "https://konveksimurah.store/pdh1.jpeg",
     summary:
       "Seragam custom untuk organisasi, komunitas, dan kepanitiaan. Tanyakan promo diskon serta bonus gratis lanyard ID card anggota sesuai ketentuan.",
     intro:

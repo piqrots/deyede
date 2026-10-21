@@ -1,38 +1,21 @@
-import { useEffect } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { FadeUp, PageWrap } from "@/components/Reveal";
 import { PROMO_OFFERS } from "@/data/promos";
+import { usePageMetadata } from "@/hooks/usePageMetadata";
 
-const PAGE_TITLE = "Promo Jersey Fun Run Murah & Baju Organisasi Murah | Deyede Semarang";
+const PAGE_TITLE = "Promo Produk Konveksi Semarang | Deyede Custom";
 const PAGE_DESCRIPTION =
-  "Lihat promo jersey fun run murah mulai Rp45.000 dan baju organisasi murah mulai Rp100.000 di Deyede Custom Semarang. Pilih produk dan baca detail promo.";
+  "Jelajahi promo produk Deyede Custom Semarang, termasuk jersey fun run murah mulai Rp45.000 dan baju organisasi murah mulai Rp100.000. Buka detail untuk melihat foto, proses, dan penawaran.";
 
 export default function Promo() {
-  useEffect(() => {
-    const previousTitle = document.title;
-    const description = document.querySelector('meta[name="description"]');
-    const previousDescription = description?.content;
-    const canonical = document.querySelector('link[rel="canonical"]');
-    const previousCanonical = canonical?.href;
-    const addedCanonical = !canonical;
-    const canonicalLink = canonical || document.createElement("link");
-
-    document.title = PAGE_TITLE;
-    if (description) description.content = PAGE_DESCRIPTION;
-    if (addedCanonical) {
-      canonicalLink.rel = "canonical";
-      document.head.appendChild(canonicalLink);
-    }
-    canonicalLink.href = "https://konveksimurah.store/promo/";
-
-    return () => {
-      document.title = previousTitle;
-      if (description && previousDescription) description.content = previousDescription;
-      if (addedCanonical) canonicalLink.remove();
-      else if (previousCanonical) canonicalLink.href = previousCanonical;
-    };
-  }, []);
+  usePageMetadata({
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    canonical: "https://konveksimurah.store/promo/",
+    image: "https://konveksimurah.store/jersey1.jpeg",
+    imageAlt: "Promo produk custom Deyede Semarang",
+  });
 
   return (
     <PageWrap>
@@ -43,11 +26,11 @@ export default function Promo() {
             Promo Deyede · Konveksi Semarang
           </p>
           <h1 className="font-serif text-5xl sm:text-6xl md:text-8xl uppercase tracking-tighter leading-[0.95] mt-6 max-w-5xl">
-            Promo Jersey Fun Run Murah
-            <span className="block italic text-white/65">& Baju Organisasi Murah</span>
+            Promo Deyede
+            <span className="block italic text-white/65">Custom Semarang</span>
           </h1>
           <FadeUp delay={0.2} className="mt-8 max-w-2xl text-sm md:text-base text-white/60 leading-relaxed">
-            Pilih promo jersey fun run custom mulai Rp45.000 atau baju organisasi custom mulai Rp100.000. Setiap produk memiliki halaman detail berisi pilihan, proses pembuatan, harga awal, dan cara konsultasi.
+            Temukan penawaran untuk jersey fun run, baju organisasi, dan produk custom lainnya. Buka detail setiap promo untuk melihat foto, proses pembuatan, harga awal, serta cara konsultasi.
           </FadeUp>
           <p className="mt-5 max-w-2xl border-l-2 border-thread pl-4 text-sm text-white/70 leading-relaxed">
             Tanyakan diskon yang sedang berlaku. Untuk pesanan baju organisasi tersedia bonus gratis lanyard ID card anggota sesuai jumlah pesanan, kuota, dan ketentuan promo.

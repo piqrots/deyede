@@ -184,7 +184,7 @@ function PromoHighlights() {
                 Penawaran Deyede
               </p>
               <h2 className="font-serif text-4xl md:text-6xl uppercase tracking-tighter">
-                Promo Jersey Fun Run Murah <span className="italic text-white/70">& Baju Organisasi Murah</span>
+                Promo <span className="italic text-white/70">Deyede</span>
               </h2>
               <p className="mt-4 max-w-2xl text-sm text-white/55 leading-relaxed">
                 Tersedia diskon sesuai jumlah pesanan dan periode promo. Pesanan baju organisasi juga dapat bonus free lanyard ID card anggota sesuai ketentuan.

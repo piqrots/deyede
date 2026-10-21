@@ -1,9 +1,9 @@
-import { useEffect } from "react";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import { FadeUp, PageWrap } from "@/components/Reveal";
 import { CONTACT, waLinkFor } from "@/data/content";
 import { PROMO_OFFERS } from "@/data/promos";
+import { usePageMetadata } from "@/hooks/usePageMetadata";
 
 function WhatsAppLink({ message }) {
   return (
@@ -23,32 +23,17 @@ export default function PromoDetail() {
   const { slug } = useParams();
   const offer = PROMO_OFFERS.find((item) => item.slug === slug);
 
-  useEffect(() => {
-    if (!offer) return undefined;
-
-    const previousTitle = document.title;
-    const description = document.querySelector('meta[name="description"]');
-    const previousDescription = description?.content;
-    const canonical = document.querySelector('link[rel="canonical"]');
-    const previousCanonical = canonical?.href;
-    const addedCanonical = !canonical;
-    const canonicalLink = canonical || document.createElement("link");
-
-    document.title = offer.pageTitle;
-    if (description) description.content = offer.description;
-    if (addedCanonical) {
-      canonicalLink.rel = "canonical";
-      document.head.appendChild(canonicalLink);
-    }
-    canonicalLink.href = `https://konveksimurah.store/promo/${offer.slug}/`;
-
-    return () => {
-      document.title = previousTitle;
-      if (description && previousDescription) description.content = previousDescription;
-      if (addedCanonical) canonicalLink.remove();
-      else if (previousCanonical) canonicalLink.href = previousCanonical;
-    };
-  }, [offer]);
+  usePageMetadata(
+    offer
+      ? {
+          title: offer.pageTitle,
+          description: offer.description,
+          canonical: `https://konveksimurah.store/promo/${offer.slug}/`,
+          image: offer.shareImage,
+          imageAlt: offer.gallery[0].alt,
+        }
+      : null,
+  );
 
   if (!offer) {
     return (
