@@ -12,6 +12,7 @@ import Portofolio from "@/pages/Portofolio";
 import CaraPesan from "@/pages/CaraPesan";
 import Tentang from "@/pages/Tentang";
 import Kontak from "@/pages/Kontak";
+import Promo from "@/pages/Promo";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -70,6 +71,7 @@ function AnimatedRoutes() {
         <Route path="/cara-pesan" element={<CaraPesan />} />
         <Route path="/tentang" element={<Tentang />} />
         <Route path="/kontak" element={<Kontak />} />
+        <Route path="/promo" element={<Promo />} />
       </Routes>
     </AnimatePresence>
   );

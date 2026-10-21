@@ -293,6 +293,7 @@ export const NAV_LINKS = [
   { to: "/", label: "Beranda", id: "beranda" },
   { to: "/katalog", label: "Katalog", id: "katalog" },
   { to: "/portofolio", label: "Portofolio", id: "portofolio" },
+  { to: "/promo", label: "Promo", id: "promo" },
   { to: "/cara-pesan", label: "Cara Pesan", id: "cara-pesan" },
   { to: "/tentang", label: "Tentang", id: "tentang" },
   { to: "/kontak", label: "Kontak", id: "kontak" },

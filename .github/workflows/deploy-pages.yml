@@ -47,7 +47,7 @@ jobs:
 
       - name: Create static entries for React routes
         run: |
-          for route in katalog portofolio cara-pesan tentang kontak; do
+          for route in katalog portofolio promo cara-pesan tentang kontak; do
             mkdir -p "build/$route"
             cp build/index.html "build/$route/index.html"
           done

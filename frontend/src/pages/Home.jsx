@@ -11,6 +11,9 @@ import {
   BENEFITS,
   STATS,
   WA_DEFAULT,
+  CONTACT,
+  IMAGES,
+  waLinkFor,
 } from "@/data/content";
 
 function Hero() {
@@ -172,6 +175,80 @@ function FeaturedProducts() {
   );
 }
 
+function PromoHighlights() {
+  const offers = [
+    {
+      title: "Jersey Fun Run Murah",
+      price: "Mulai Rp45.000",
+      image: IMAGES.jersey,
+      alt: "Contoh jersey custom untuk fun run",
+      message: "Halo Deyede, saya ingin tanya jersey custom untuk fun run.",
+    },
+    {
+      title: "Baju Organisasi Murah",
+      price: "Mulai Rp100.000",
+      image: IMAGES.pdhFront,
+      alt: "Contoh baju organisasi custom",
+      message: "Halo Deyede, saya ingin tanya baju custom untuk organisasi.",
+    },
+  ];
+
+  return (
+    <section data-testid="promo-highlights" className="border-y border-white/15 bg-stitch">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
+        <FadeUp>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+              <p className="font-mono text-xs uppercase tracking-[0.3em] text-thread mb-4">
+                Penawaran Deyede
+              </p>
+              <h2 className="font-serif text-4xl md:text-6xl uppercase tracking-tighter">
+                Harga Mulai, <span className="italic text-white/70">Bikin Custom.</span>
+              </h2>
+            </div>
+            <Link
+              to="/promo"
+              data-testid="promo-details-link"
+              className="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-white/60 hover:text-white transition-colors"
+            >
+              Lihat Promo & Proses Produksi
+              <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </Link>
+          </div>
+        </FadeUp>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 border border-white/15 divide-y md:divide-y-0 md:divide-x divide-white/15">
+          {offers.map((offer, index) => (
+            <FadeUp key={offer.title} delay={index * 0.1}>
+              <article className="grid grid-cols-[minmax(0,8rem)_1fr] sm:grid-cols-[minmax(0,12rem)_1fr] gap-5 p-5 md:p-7 h-full">
+                <img
+                  src={offer.image}
+                  alt={offer.alt}
+                  loading="lazy"
+                  className="w-full h-32 sm:h-40 object-cover bg-white"
+                />
+                <div className="flex flex-col items-start justify-center">
+                  <h3 className="font-serif text-xl sm:text-2xl uppercase">{offer.title}</h3>
+                  <p className="font-mono text-sm text-thread mt-2">{offer.price}</p>
+                  <a
+                    href={waLinkFor(CONTACT.waNumber, offer.message)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.16em] border-b border-white/40 pb-1 hover:text-thread hover:border-thread transition-colors"
+                  >
+                    Tanya via WhatsApp
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              </article>
+            </FadeUp>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function StepsPreview() {
   return (
     <section data-testid="steps-preview" className="border-y border-white/15 bg-white/[0.02] bg-stitch">
@@ -285,6 +362,7 @@ export default function Home() {
       <Ribbon />
       <Stats />
       <FeaturedProducts />
+      <PromoHighlights />
       <StepsPreview />
       <Ribbon inverted speed={30} />
       <Benefits />
