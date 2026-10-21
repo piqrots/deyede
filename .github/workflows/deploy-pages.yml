@@ -36,7 +36,7 @@ jobs:
           cp -R portofolio frontend/public/
 
       - name: Install dependencies
-        run: npm install --legacy-peer-deps --no-audit --no-fund
+        run: corepack yarn install --non-interactive
         working-directory: frontend
 
       - name: Build frontend
