@@ -42,6 +42,11 @@ export const IMAGES = {
     "https://customer-assets-gfyr7b9c.emergentagent.net/job_deyede-profile/artifacts/2fffabfc5195bf43_Navy%20Utility%20Shirt%20with%20Ivory%20Accents.png",
   pdhBack:
     "https://customer-assets-gfyr7b9c.emergentagent.net/job_deyede-profile/artifacts/c973521aed791cc8_Analysis%20output%202.png",
+  promoJersey: "/jersey1.jpeg",
+  promoJerseyThumbnail: "/tubnailjersey.jpeg",
+  promoOrganizationFront: "/pdh1.jpeg",
+  promoOrganizationBack: "/pdh2.jpeg",
+  promoOrganizationVest: "/vest.jpeg",
   vestCreamFront:
     "https://customer-assets-gfyr7b9c.emergentagent.net/job_deyede-profile/artifacts/3e3d1588636fdf89_DEYEDE%20Green%20and%20Cream%20Utility%20Vest.png",
   vestCreamBack:

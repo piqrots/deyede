@@ -34,6 +34,7 @@ jobs:
           cp favicon.png favicon.svg frontend/public/
           cp CNAME frontend/public/CNAME
           cp -R portofolio frontend/public/
+          cp jersey1.jpeg tubnailjersey.jpeg pdh1.jpeg pdh2.jpeg vest.jpeg frontend/public/
 
       - name: Install dependencies
         run: corepack yarn install --non-interactive
@@ -50,6 +51,10 @@ jobs:
           for route in katalog portofolio promo cara-pesan tentang kontak; do
             mkdir -p "build/$route"
             cp build/index.html "build/$route/index.html"
+          done
+          for route in jersey-fun-run-murah baju-organisasi-murah; do
+            mkdir -p "build/promo/$route"
+            cp build/index.html "build/promo/$route/index.html"
           done
         working-directory: frontend
 
