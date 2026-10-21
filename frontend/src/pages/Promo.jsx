@@ -6,6 +6,7 @@ import { PROMO_OFFERS } from "@/data/promos";
 
 const PAGE_TITLE = "Promo Jersey Fun Run Murah & Baju Organisasi Murah | Deyede Semarang";
 const PAGE_DESCRIPTION =
+  "Lihat promo jersey fun run murah mulai Rp45.000 dan baju organisasi murah mulai Rp100.000 di Deyede Custom Semarang. Pilih produk dan baca detail promo.";
 
 export default function Promo() {
   useEffect(() => {
